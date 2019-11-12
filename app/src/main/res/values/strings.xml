@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_people">People</string>
+    <string name="title_my_account">My Account</string>
+</resources>
