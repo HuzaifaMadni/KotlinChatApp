@@ -45,9 +45,10 @@ class SignInActivity : AppCompatActivity() {
 
             if (resultCode == Activity.RESULT_OK){
                 val progressDialog = indeterminateProgressDialog("Setting Up Your Account")
-                //TODO: Register user in Firestore
-                startActivity(intentFor<MainActivity>().newTask().clearTask())
-                progressDialog.dismiss()
+                FirestoreUtil.initCurrentUserNew {
+                    startActivity(intentFor<MainActivity>().newTask().clearTask())
+                    progressDialog.dismiss()
+                }
             }
             else if (resultCode == Activity.RESULT_CANCELED){
                 if (response == null) return
